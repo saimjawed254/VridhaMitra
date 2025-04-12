@@ -82,4 +82,21 @@ VridhaMitra is an all-in-one solution designed to address the challenges faced b
 3. **Run ML Models**:
    ```bash
    pip install _______
+---
 
+## 🌟 Team
+
+| Member                  | Role                     |
+|-------------------------|--------------------------|
+| **Priyanshu Ranjan**    | Team Lead, ML            |
+| **Shreya Srivastava**   | Frontend, Backend        |
+| **Saim Jawed**          | Backend, UI/UX           |
+| **Devansh Pratap Singh**| Machine Learning         |
+---
+
+## 📄 Acknowledgments
+- **Byteverse Hackathon** for theme inspiration 🏆  
+- **NIT Patna** for institutional support 🏛️  
+- Open-source libraries:  
+  ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white)
+  ![OpenCV](https://img.shields.io/badge/-OpenCV-5C3EE8?logo=opencv&logoColor=white)
