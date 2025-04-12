@@ -96,11 +96,11 @@ VridhaMitra is an all-in-one solution designed to address the challenges faced b
 | **Devansh Pratap Singh**| Machine Learning,Testing |
 ---
 
-## ✨ Screenshots
-![image](https://github.com/user-attachments/assets/cb22828c-cdcd-4b76-babf-8cef36bba013)
-![image](https://github.com/user-attachments/assets/71d2a2af-783b-4700-8711-f1d9fc169d4e)
-![image](https://github.com/user-attachments/assets/4bcd5023-0ca0-415a-8f0f-6be6a77e78fa)
-
+## ✨ UI
+![WhatsApp Image 2025-04-12 at 21 08 11 (2)](https://github.com/user-attachments/assets/a228a1cd-ec67-4bbc-bdc0-830ed909e029)
+![WhatsApp Image 2025-04-12 at 21 08 12 (1)](https://github.com/user-attachments/assets/f7d2555e-a64a-4612-977d-663b53843e05)
+![WhatsApp Image 2025-04-12 at 21 08 11 (1)](https://github.com/user-attachments/assets/52656746-3d5e-49a3-afbc-b4264fa976a3)
+![WhatsApp Image 2025-04-12 at 21 08 11](https://github.com/user-attachments/assets/9b3acec7-428e-4241-ae65-8b7166feb187)
 
 ---
 - Open-source libraries:  
