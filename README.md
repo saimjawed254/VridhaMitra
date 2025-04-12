@@ -17,13 +17,13 @@ VridhaMitra is an all-in-one solution designed to address the challenges faced b
 ## 🛠️ Technology Stack
 ### Frontend
 - **Framework**: React.js (with Vite for build tooling)
-- **UI Libraries**: Material-UI or Tailwind CSS for responsive design
-- **State Management**: Redux or Context API
+- **UI Libraries**: Vanilla CSS for responsive design
+- **State Management**: Redux Store
 
 ### Backend
 - **Server**: Node.js with Express.js
-- **Database**: Firebase/Firestore or MongoDB for real-time data
-- **Authentication**: Firebase Auth or JWT
+- **Database**: MongoDB for real-time data
+- **Authentication**: OTP based authentication
 
 ### AI/ML
 - **Keypoints Detection**: MediaPipe
@@ -33,8 +33,7 @@ VridhaMitra is an all-in-one solution designed to address the challenges faced b
 
 ### APIs
 - **Google Maps API**: For GPS and volunteer tracking
-- **Payment Gateway**: Razorpay or Stripe for donations
-- **Emergency Services**: Twilio for SMS/email alerts
+- **Emergency Services**: Nodemailer for email alerts
 
 ---
 
@@ -61,7 +60,6 @@ VridhaMitra is an all-in-one solution designed to address the challenges faced b
 ### Prerequisites
 - Node.js (v16+)
 - Python (v3.8+ for ML)
-- Firebase account (for backend services)
 
 ### Installation
 1. **Clone the repository**:
@@ -81,14 +79,11 @@ VridhaMitra is an all-in-one solution designed to address the challenges faced b
    npm install
    npm start
 
-3. **Run ML Models**:
+3. **Set up AI Posture Detection**:
    ```bash
    cd ../ML/Prediction_Pipeline
-   python
    pip install numpy pandas matplotlib opencv-python mediapipe fastapi uvicorn python-multipart
-   //Run app.py to start server
-   ```bash
-   Open index.html to upload file and check result
+   python app.py //Now ML server is on
 ---
 
 ## 🌟 Team
