@@ -5,6 +5,7 @@ import multer from "multer";
 import { Admin } from "./models/admin/admin.js";
 import { Volunteer } from "./models/volunteer/volunteer.js";
 import { sendOtp } from "./utils/sendOtp.js";
+import { User } from "./models/user/user.js";
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
@@ -49,6 +50,32 @@ router.post("/login", async (req, res) => {
   otp = Number(otp);
 
   if (type == "admin") {
+    const admin = await Admin.findOne({ email });
+    if (!admin) {
+      res.status(404).json({
+        message: "Not a Valid User. Please Sign-up instead!",
+      });
+    } else {
+      await Admin.findOneAndUpdate({ email: email }, { $set: { otp: otp } });
+    }
+    try {
+      await sendOtp({
+        subject: "VRIDHA MITR OTP",
+        receiver: email,
+        otp,
+      });
+      res.status(200).json({
+        success: true,
+        message: "OTP sent successfully",
+      });
+    } catch (error) {
+      res.status(500).json({
+        success: false,
+        message: "Internal Server Error. Please try after some time.",
+      });
+    }
+  }
+  if (type == "user") {
     const admin = await Admin.findOne({ email });
     if (!admin) {
       res.status(404).json({
@@ -195,7 +222,21 @@ app.post("/otp-verify", async (req, res) => {
   }
   if (type == "volunteer") {
     let checkUser = await Admin.findOne({ email: receiver });
-    premium = checkUser.premium;
+
+    if (checkUser.otp == otp) {
+      res.json({
+        success: true,
+        message: "User Authorized ",
+      });
+    } else {
+      res.status(500).json({
+        success: false,
+        message: "OTP is incorrect. ",
+      });
+    }
+  }
+  if (type == "user") {
+    let checkUser = await User.findOne({ email: receiver });
 
     if (checkUser.otp == otp) {
       res.json({
@@ -211,6 +252,80 @@ app.post("/otp-verify", async (req, res) => {
   }
 });
 
+app.post('/update-location',async(req,res)=>{
+  const{email, lat, long}=req.body;
+  try{
+    await User.findOneAndUpdate(
+      {email:email},
+      { $set: { 
+        latitude: lat,
+        longitude: long
+       } }
+    )
+    res.json({
+      message: "Data Received Successfully",
+    });
+  } catch(e){
+    console.error("Error not found user:", error);
+    res.status(500).send({ message: "User not found" });
+  }
+})
+
+app.post('/get-users', async(req,res)=>{
+  const email=req.body;
+  try{
+    const user=await User.findOne(
+      {email:email},
+    )
+    res.json({
+      usersArray : user.usersId,
+      message: "Data Received Successfully",
+    });
+  } catch(e){
+    console.error("Error not found user:", error);
+    res.status(500).send({ message: "User not found" });
+  }
+})
+
+app.post('/add-user',async(req,res)=>{
+    const { name, age, gender, email, number, address } = req.body;
+    const image = req.files["image"][0];
+    const govid = req.files["govid"][0];
+    const user=await User.findOne({email})
+        if(user){
+            res.status(404).json({
+                message:"This user is already registered!"
+            })
+        } else{
+            await User.create({
+                name: name,
+                age: age,
+                gender: gender,
+                mobileNumber: number,
+                email: email,
+                address: address,
+                photo: {
+                  data: image.buffer,
+                  contentType: image.mimetype,
+                },
+                idPhoto: {
+                  data: govid.buffer,
+                  contentType: govid.mimetype,
+                },
+              });
+        }
+        const admin=Admin.findOne({email})
+        let usersArray=admin.usersId;
+        usersArray.push(email)
+        await Admin.findOneAndUpdate({email},{
+          $set: { 
+            usersId: usersArray
+           } 
+        })
+        res.json({
+          message: "Data Received Successfully",
+        });
+})
 router.post("/file", async (req, res) => {
   try {
     const { email } = req.body;
