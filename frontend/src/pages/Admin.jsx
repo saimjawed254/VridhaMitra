@@ -1,8 +1,14 @@
 import React from "react";
 import "./admin.css";
 import Headerr from "../components/Headerr";
+import { useSelector } from "react-redux";
 
 function Admin() {
+
+  const emailValue = useSelector((store) => store.email)
+
+  console.log(emailValue)
+
   // Sample data for the users table
   const users = [
     { id: 1, status: "Do/MM/YYYY", recentCheck: 2 },

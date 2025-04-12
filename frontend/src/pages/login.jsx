@@ -3,23 +3,23 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import { toast, ToastContainer } from 'react-toastify'
-import { logActions } from '../../store/logSlice';
+import { emailActions } from '../../store/emailSlice';
 
 function Login() {
+    const dispatch = useDispatch()
 
-    const logValue=useSelector((store)=>store.log)
-    const dispatch=useDispatch()
-    console.log(logValue.log)
+    const emailValue = useSelector((store) => store.email)
 
     function login() {
-        dispatch(logActions.logged())
-        console.log(logValue.log);
+        dispatch(emailActions.setEmail(email))
+
+        console.log(emailValue)
     }
 
     const buttonInfoSignup = { link: "", text: "Send OTP" }
     const buttonInfoOtp = { link: "", text: "Verify OTP" }
     const emailRef = useRef()
-    let email,type;
+    let email, type;
     const otpRef = useRef()
     const typeRef = useRef()
 
@@ -56,7 +56,7 @@ function Login() {
         event.preventDefault()
 
         const otp = otpRef.current.value;
-        const type=typeRef.current.value;
+        const type = typeRef.current.value;
         console.log(otp)
         try {
             const { data } = await axios.post("http://localhost:3000/otp-verify/", {
@@ -70,15 +70,21 @@ function Login() {
             otpRef.current.value = "";
             toast.success(data.message)
             login()
-            // navigate('/dashboard')
+            if (type == "admin") {
+                navigate('/admin-home')
+            } else if (type == "user") {
+                navigate('/user-home')
+            } else if (type == "volunteer") {
+                navigate('/volunteer-home')
+            }
         } catch (error) {
             otpRef.current.value = "";
             console.log(error)
             toast.error(error.response.data.message)
         }
-        typeRef.current.value=""
-        otpRef.current.value=""
-        emailRef.current.value=""
+        typeRef.current.value = ""
+        otpRef.current.value = ""
+        emailRef.current.value = ""
     }
 
     return (

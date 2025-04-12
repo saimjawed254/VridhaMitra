@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './App.css';
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const App = () => {
 
@@ -39,9 +40,14 @@ const App = () => {
             <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200">
               See all features ➤
             </button>
+            <Link to='/sign-up'>
             <button className="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold py-3 px-6 rounded-lg transition duration-200">
               Get Started
-            </button>
+            </button></Link>
+            <Link to='/login'>
+            <button className="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold py-3 px-6 rounded-lg transition duration-200">
+              Log in
+            </button></Link>
           </div>
         </div>
 

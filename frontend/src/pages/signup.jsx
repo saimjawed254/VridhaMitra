@@ -2,9 +2,11 @@ import { useRef } from "react"
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { toast, ToastContainer } from 'react-toastify'
-import { logActions } from "../../store/logSlice";
+import { useNavigate } from 'react-router-dom'
 
 function Signup() {
+
+    const navigate=useNavigate();
 
     const imageInputRef = useRef(null);
     const govidInputRef = useRef(null);
@@ -36,6 +38,8 @@ function Signup() {
                 headers: { "Content-Type": "multipart/form-data" },
             });
             console.log("Data Uploaded Successfully", response.data.message);
+            navigate("/login")
+
         } catch (e) {
             console.log("Data could not be uploaded", e);
             toast.error(e.response.data.message)
