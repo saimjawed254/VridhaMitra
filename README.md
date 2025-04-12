@@ -64,7 +64,7 @@ VridhaMitra is an all-in-one solution designed to address the challenges faced b
 ### Installation
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/npm_install_bugs/VridhaMitra.git
+   git clone https://github.com/07-priyanshu/VridhaMitra.git
    cd VridhaMitra
 
 2. **Set up Frontend**:
