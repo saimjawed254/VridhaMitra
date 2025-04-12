@@ -83,7 +83,11 @@ VridhaMitra is an all-in-one solution designed to address the challenges faced b
 
 3. **Run ML Models**:
    ```bash
-   pip install numpy,pandas,matplotlib,cv2,pickle,mediapipe,base64,fastapi,uvicorn
+   pip install numpy pandas matplotlib opencv-python mediapipe fastapi uvicorn python-multipart
+   ```bash
+   //Run app.py to start server
+   ```bash
+   Open index.html to upload file and check result
 ---
 
 ## 🌟 Team
