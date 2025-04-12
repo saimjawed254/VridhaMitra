@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import CameraFeed from './components/CameraFeed';
-import PoseSelector from './components/PoseSelector';
-import './App.css';
 
 function PoseDetection() {
   const [selectedPose, setSelectedPose] = useState('tree');

@@ -1,7 +1,12 @@
 import React from "react";
 import "./user.css";
+import { useSelector } from "react-redux";
 import Headerr from "../components/Headerr";
 function User() {
+
+  const emailValue = useSelector((store) => store.email)
+
+  console.log(emailValue)
   return (
     <div className="health-app">
      <Headerr/>

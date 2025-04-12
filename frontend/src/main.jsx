@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import logStore from '../store/store.js'
+import store from '../store/store.js'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -16,10 +16,11 @@ import App from './App'
 import Login from './pages/login'
 import Test from './pages/test'
 import Signup from './pages/signup.jsx'
+import PoseDetection from './pages/user-features/PoseDetection.jsx'
 // import OTPVerify from './pages/otp-verify.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Provider store={logStore}>
+    <Provider store={store}>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<App />} />

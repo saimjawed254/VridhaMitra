@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit"
 
-import logSlice from "./logSlice"
+import emailSlice from "./emailSlice"
 
-const logStore = configureStore({
-    reducer:{log:logSlice.reducer}
+const store = configureStore({
+    reducer:{email:emailSlice.reducer}
+
 })
 
-export default logStore
+export default store
