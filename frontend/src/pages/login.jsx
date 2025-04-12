@@ -6,7 +6,7 @@ import { toast, ToastContainer } from 'react-toastify'
 import { emailActions } from '../../store/emailSlice';
 
 function Login() {
-    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const emailValue = useSelector((store) => store.email)
 
@@ -22,8 +22,6 @@ function Login() {
     let email, type;
     const otpRef = useRef()
     const typeRef = useRef()
-
-    const navigate = useNavigate()
 
 
     const handleSignup = async (event) => {
