@@ -26,7 +26,8 @@ VridhaMitra is an all-in-one solution designed to address the challenges faced b
 - **Authentication**: OTP based authentication
 
 ### AI/ML
-- **Keypoints Detection**: MediaPipe
+- **Dataset Used**: [Yoga-82](https://www.kaggle.com/datasets/akashrayhan/yoga-82)
+- **Keypoints Detection**: MediaPipe for extracting human posture keypoints from images
 - **Libraries**: Numpy, Pandas, Matplotlib, OpenCV, Pickle
 - **Models Used**: Logistic Regression on Image Keypoints
 - **Backend**: FastAPI and Uvicorn
@@ -40,19 +41,21 @@ VridhaMitra is an all-in-one solution designed to address the challenges faced b
 ## 📂 Repository Structure
 - 📂 **VridhaMitra**
   - 📂 **frontend**
-    - 📂 public
     - 📂 src
+      - 📂 assets
       - 📂 components
       - 📂 pages
-      - 📂 utils
+    - 📂 store
     - 📜 vite.config.js
   - 📂 **backend**
-    - 📂 controllers
     - 📂 models
-    - 📂 routes
+    - 📂 uploads
+    - 📂 utils
   - **📂 ml**
-    - 📂 yoga_pose
-      - 📜 pose_detection.ipynb
+    - 📂 Confusion_Matrix
+    - 📂 Dataset
+    - 📂 Images
+    - 📂 Prediction_Pipeline
   - 📜 README.md
 ---
 
@@ -83,7 +86,7 @@ VridhaMitra is an all-in-one solution designed to address the challenges faced b
    ```bash
    cd ../ML/Prediction_Pipeline
    pip install numpy pandas matplotlib opencv-python mediapipe fastapi uvicorn python-multipart
-   python app.py //Now ML server is on
+   python app.py
 ---
 
 ## 🌟 Team
@@ -105,3 +108,9 @@ VridhaMitra is an all-in-one solution designed to address the challenges faced b
 - Open-source libraries:  
   ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white)
   ![OpenCV](https://img.shields.io/badge/-OpenCV-5C3EE8?logo=opencv&logoColor=white)
+  ![MediaPipe](https://img.shields.io/badge/-MediaPipe-FF7F50?logo=mediapipe&logoColor=white)
+  ![Uvicorn](https://img.shields.io/badge/-Uvicorn-499848?logo=uvicorn&logoColor=white)
+  ![FastAPI](https://img.shields.io/badge/-FastAPI-009688?logo=fastapi&logoColor=white)
+  ![NumPy](https://img.shields.io/badge/-NumPy-013243?logo=numpy&logoColor=white)
+  ![Pandas](https://img.shields.io/badge/-Pandas-150458?logo=pandas&logoColor=white)
+  ![Matplotlib](https://img.shields.io/badge/-Matplotlib-11557C?logo=matplotlib&logoColor=white)
