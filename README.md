@@ -38,19 +38,19 @@ VridhaMitra is an all-in-one solution designed to address the challenges faced b
 
 ## 📂 Repository Structure
 - **VridhaMitra/**
-  - **frontend/**
-    - public/
-    - src/
-      - components/
-      - pages/
-      - utils/
+  - 📂 **frontend**
+    - 📂 public
+    - 📂 src
+      - 📂 components
+      - 📂 pages
+      - 📂 utils
     - vite.config.js
-  - **backend/**
-    - controllers/
-    - models/
-    - routes/
-  - **ml/**
-    - yoga_pose/
+  - 📂 **backend**
+    - 📂 controllers
+    - 📂 models
+    - 📂 routes
+  - **📂 ml**
+    - 📂 yoga_pose
       - pose_detection.ipynb
   - README.md
 ---
