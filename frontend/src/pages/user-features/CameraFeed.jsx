@@ -121,20 +121,19 @@ const CameraFeed = ({ isActive, onCapture }) => {
           <img 
             src={capturedImage.dataUrl} 
             alt={`Captured at ${capturedImage.timestamp}`} 
-            style={{ maxWidth: '100%', borderRadius: '8px', marginTop: '10px' }}
           />
           <p>{capturedImage.timestamp}</p>
         </div>
       )}
 
       {uploadStatus && (
-        <div className="upload-status" style={{ marginTop: '15px' }}>
+        <div className="upload-status" style={{ marginTop: '15px', color: 'black'}}>
           <strong>Status:</strong> {uploadStatus}
         </div>
       )}
 
       {poseName && (
-        <div className="pose-result" style={{ marginTop: '10px' }}>
+        <div className="pose-result" style={{ marginTop: '10px', color: 'black'}}>
           <strong>Detected Pose:</strong> <code>{poseName}</code>
         </div>
       )}
