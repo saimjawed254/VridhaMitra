@@ -29,7 +29,7 @@ VridhaMitra is an all-in-one solution designed to address the challenges faced b
 - **Keypoints Detection**: MediaPipe
 - **Libraries**: Numpy, Pandas, Matplotlib, OpenCV, Pickle
 - **Models Used**: Logistic Regression on Image Keypoints
-- **Backend**: using FastAPI
+- **Backend**: FastAPI and Uvicorn
 
 ### APIs
 - **Google Maps API**: For GPS and volunteer tracking
@@ -83,7 +83,7 @@ VridhaMitra is an all-in-one solution designed to address the challenges faced b
 
 3. **Run ML Models**:
    ```bash
-   pip install _______
+   pip install numpy,pandas,matplotlib,cv2,pickle,mediapipe,base64,fastapi,uvicorn
 ---
 
 ## 🌟 Team
