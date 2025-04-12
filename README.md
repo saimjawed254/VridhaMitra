@@ -37,43 +37,22 @@ VridhaMitra is an all-in-one solution designed to address the challenges faced b
 ---
 
 ## 📂 Repository Structure
-📦 VridhaMitra
-├── 📂 frontend               # React.js application (Vite-powered)
-│   ├── 📂 public             # Static assets (images, fonts, etc.)
-│   ├── 📂 src                # React components and pages
-│   │   ├── 📂 components     # Reusable UI components
-│   │   ├── 📂 pages          # Screen-level components
-│   │   ├── 📂 utils          # Helper functions
-│   │   ├── 📜 App.jsx        # Main application component
-│   │   └── 📜 main.jsx       # Application entry point
-│   ├── 📜 .gitignore         # Frontend-specific ignored files
-│   ├── 📜 package.json       # Frontend dependencies
-│   └── 📜 vite.config.js     # Vite configuration
-│
-├── 📂 backend                # Node.js server
-│   ├── 📂 controllers        # Business logic handlers
-│   ├── 📂 models             # Database schemas
-│   ├── 📂 routes             # API endpoints
-│   ├── 📂 middleware         # Authentication/validation
-│   ├── 📜 .env               # Environment variables
-│   ├── 📜 app.js             # Express application setup
-│   └── 📜 package.json       # Backend dependencies
-│
-├── 📂 ml                     # AI/ML components
-│   ├── 📂 yoga_pose          # Posture detection models
-│   │   ├── 📜 pose_detection.ipynb  # Jupyter notebook
-│   │   └── 📜 requirements.txt       # Python dependencies
-│   └── 📂 emergency_analysis # Future ML models
-│
-├── 📂 public                 # Global static assets
-│   ├── 📂 docs               # Documentation files
-│   └── 📂 demo               # Demo assets
-│
-├── 📜 .gitignore             # Global ignored files
-├── 📜 LICENSE                # MIT License file
-├── 📜 package.json           # Root project config (if using monorepo)
-└── 📜 README.md              # Project documentation
-
+- **VridhaMitra/**
+  - **frontend/**
+    - public/
+    - src/
+      - components/
+      - pages/
+      - utils/
+    - vite.config.js
+  - **backend/**
+    - controllers/
+    - models/
+    - routes/
+  - **ml/**
+    - yoga_pose/
+      - pose_detection.ipynb
+  - README.md
 ---
 
 ## 🚀 Getting Started
