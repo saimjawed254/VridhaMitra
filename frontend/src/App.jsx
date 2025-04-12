@@ -23,7 +23,7 @@ const App = () => {
       <div className="max-w-4xl w-full bg-white rounded-2xl shadow-lg overflow-hidden">
         {/* Header Section */}
         <div className="bg-blue-600 p-8 text-white">
-          <h1 className="text-4xl font-bold mb-2">Care Sphere</h1>
+          <h1 className="text-4xl font-bold mb-2">VridhaMitra</h1>
           <div className="w-16 h-1 bg-blue-300 mb-6"></div>
 
           <h2 className="text-2xl font-semibold mb-4">The Perfect Combination of Volunteered Care and AI Detection.</h2>
