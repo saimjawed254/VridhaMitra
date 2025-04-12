@@ -26,8 +26,9 @@ VridhaMitra is an all-in-one solution designed to address the challenges faced b
 - **Authentication**: Firebase Auth or JWT
 
 ### AI/ML
-- **Posture Tracking**: Python with OpenCV and MediaPipe (Jupyter Notebook for prototyping)
-- **Telehealth Integration**: WebRTC for video calls
+- **Keypoints Detection**: MediaPipe
+- **Libraries**: Numpy, Pandas, Matplotlib, OpenCV, Pickle
+- **Backend API**: FastAPI
 
 ### APIs
 - **Google Maps API**: For GPS and volunteer tracking
