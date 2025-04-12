@@ -95,7 +95,14 @@ VridhaMitra is an all-in-one solution designed to address the challenges faced b
 | **Saim Jawed**          | Backend, UI/UX           |
 | **Devansh Pratap Singh**| Machine Learning,Testing |
 ---
- 
+
+## ✨ Screenshots
+![image](https://github.com/user-attachments/assets/cb22828c-cdcd-4b76-babf-8cef36bba013)
+![image](https://github.com/user-attachments/assets/71d2a2af-783b-4700-8711-f1d9fc169d4e)
+![image](https://github.com/user-attachments/assets/4bcd5023-0ca0-415a-8f0f-6be6a77e78fa)
+
+
+---
 - Open-source libraries:  
   ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white)
   ![OpenCV](https://img.shields.io/badge/-OpenCV-5C3EE8?logo=opencv&logoColor=white)
