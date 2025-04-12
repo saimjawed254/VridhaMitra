@@ -93,7 +93,7 @@ VridhaMitra is an all-in-one solution designed to address the challenges faced b
 
 |     Member              |     Key Responsibilities      |
 |-------------------------|-------------------------------|
-| **Priyanshu Ranjan**    | ML/API Integration            |
+| **Priyanshu Ranjan**    | TeamLead ML/API Integration   |
 | **Shreya Srivastava**   | Frontend                      |
 | **Saim Jawed**          | Backend, UI/UX                |
 | **Devansh Pratap Singh**| Machine Learning              |
