@@ -7,10 +7,10 @@ VridhaMitra is an all-in-one solution designed to address the challenges faced b
 
 ## ✨ Key Features
 - **Instant Emergency SOS**: One-tap panic button to alert nearby volunteers, family, and hospitals via GPS.
-- **Health Hub**: Medication reminders, telehealth shortcuts, and booking for nurses/helpers.
-- **AI-Powered Fitness Check**: Camera-based posture tracking for yoga and personalized wellness plans.
+- **Pills Reminder**: Medication reminders, telehealth shortcuts, and booking for nurses/helpers.
+- **AI-Powered Yoga Detection**: Camera-based posture tracking for yoga poses.
 - **Crowdsourced Fundraising**: Verified requests for medical treatments with secure donation options.
-- **Volunteer-Powered Transportation**: Safe and assisted mobility for seniors with real-time volunteer matching.
+- **Volunteer-Assisted Transportation**: Safe and assisted mobility for seniors with real-time volunteer matching.
 
 ---
 
