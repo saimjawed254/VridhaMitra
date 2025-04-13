@@ -27,7 +27,7 @@ app.use(
 
 app.use(
   cors({
-    origin: "https://vridha-mitra.onrender.com",
+    origin: "https://vridha-mitra.vercel.app",
     methods: ["GET", "POST"],
   })
 );
