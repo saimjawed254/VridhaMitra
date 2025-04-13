@@ -38,13 +38,13 @@ function Login() {
         type = typeRef.current.value;
 
         try {
-            const { data } = await axios.post("https://vridhamitra.onrender.com/login/", {
+            const data  = await axios.post("https://vridhamitra.onrender.com/login/", {
                 email,
                 type,
             })
             console.log(data)
             emailRef.current.value = "";
-            toast.success(data.message)
+            toast.success(data.data.message)
         } catch (error) {
             toast.error(error.response.data.message)
         }
@@ -57,7 +57,7 @@ function Login() {
         const type = typeRef.current.value;
         console.log(otp)
         try {
-            const { data } = await axios.post("https://vridhamitra.onrender.com/otp-verify/", {
+            const data  = await axios.post("https://vridhamitra.onrender.com/otp-verify/", {
                 otp,
                 receiver: email,
                 type,
@@ -66,7 +66,7 @@ function Login() {
             })
             console.log(data)
             otpRef.current.value = "";
-            toast.success(data.message)
+            toast.success(data.data.message)
             login()
             if (type == "admin") {
                 navigate('/admin-home')
