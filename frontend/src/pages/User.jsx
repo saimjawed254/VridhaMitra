@@ -15,9 +15,6 @@ function User() {
   //     navigate("/login")
   //   }
   // }, []);
-  const [latitude, setLat] = useState("");
-  const [longitude, setLong] = useState("");
-  const [loading, setLoading] = useState(false);
   console.log(emailValue)
 
   const getLoc = () => {
@@ -39,7 +36,6 @@ function User() {
     setLong(long);
     console.log(lat + " " + long)
 
-    console.log(newsrc)
     let data;
     try {
       const fetchLoc = async () => {

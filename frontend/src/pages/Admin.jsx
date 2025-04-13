@@ -36,7 +36,7 @@ function Admin() {
       <Headerr />
       <main className="main-content">
         <div className="hero-section">
-          <h2>BluePulse:A new age of healthcare is here</h2>
+          <h2>Vridha Mitra:A new age of healthcare is here</h2>
         </div>
         <section className="section" id="section1">
           <h3>Manage care for your loved ones</h3>
