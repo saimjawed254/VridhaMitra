@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './MedicineReminder.css';
 
 const MedicineReminder = () => {
   const [medicines, setMedicines] = useState([
@@ -33,35 +34,33 @@ const MedicineReminder = () => {
   };
 
   return (
-    <div className="min-h-screen bg-blue-50 p-6">
-      <div className="max-w-4xl mx-auto">
-        <div className="flex justify-between items-center mb-8">
-         <h1 style={{ color: '#343434', textDecoration: 'none ' }}>Medicine Reminder</h1>
+    <div className="medicine-reminder-container">
+      <div className="main-content">
+        <div className="header-section">
+          <h1 className="app-title">Medicine Reminder</h1>
           <button 
             onClick={() => setIsModalOpen(true)}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg flex items-center"
+            className="add-medicine-btn"
           >
-            <span className="mr-2">+</span> Add Medicine
+            <span className="plus-icon">+</span> Add Medicine
           </button>
         </div>
 
-        <div className="mb-10">
-          <h2 className="text-xl font-semibold text-gray-700 mb-4">Upcoming Reminders</h2>
-          <div className="bg-white rounded-xl shadow-md p-6">
+        <div className="upcoming-reminders-section">
+          <h2 className="section-title">Upcoming Reminders</h2>
+          <div className="reminders-card">
             {medicines.length > 0 ? (
               medicines.map(medicine => (
-                <div key={medicine.id} className="flex justify-between items-center p-4 border-b border-gray-100 last:border-0">
-                  <div>
-                    <h3 className="font-bold text-lg text-zinc-950">{medicine.name}</h3>
-                    <p className="text-gray-600">{medicine.dosage} • {medicine.frequency}</p>
+                <div key={medicine.id} className="reminder-item">
+                  <div className="medicine-info">
+                    <h3 className="medicine-name">{medicine.name}</h3>
+                    <p className="medicine-details">{medicine.dosage} • {medicine.frequency}</p>
                   </div>
-                  <div className="flex items-center">
-                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full mr-4">
-                      {medicine.time}
-                    </span>
+                  <div className="time-and-delete">
+                    <span className="time-badge">{medicine.time}</span>
                     <button 
                       onClick={() => deleteMedicine(medicine.id)}
-                      className="text-red-500 hover:text-red-700"
+                      className="delete-btn"
                     >
                       ✕
                     </button>
@@ -69,28 +68,26 @@ const MedicineReminder = () => {
                 </div>
               ))
             ) : (
-              <p className="text-gray-500 text-center py-8">No medicines added yet</p>
+              <p className="empty-state">No medicines added yet</p>
             )}
           </div>
         </div>
 
-        <div>
-          <h2 className="text-xl font-semibold text-gray-700 mb-4">Your Medications</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="medications-section">
+          <h2 className="section-title">Your Medications</h2>
+          <div className="medications-grid">
             {medicines.map(medicine => (
-              <div key={medicine.id} className="bg-white rounded-xl shadow-md p-6">
-                <div className="flex justify-between">
-                  <h3 className="font-bold text-xl mb-2 text-zinc-950">{medicine.name}</h3>
-                  <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-sm">
-                    {medicine.frequency}
-                  </span>
+              <div key={medicine.id} className="medication-card">
+                <div className="card-header">
+                  <h3 className="medicine-name">{medicine.name}</h3>
+                  <span className="frequency-badge">{medicine.frequency}</span>
                 </div>
-                <p className="text-gray-600 mb-4">{medicine.dosage}</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-lg font-medium">{medicine.time}</span>
+                <p className="dosage">{medicine.dosage}</p>
+                <div className="card-footer">
+                  <span className="time">{medicine.time}</span>
                   <button 
                     onClick={() => deleteMedicine(medicine.id)}
-                    className="text-red-500 hover:text-red-700 px-2"
+                    className="delete-btn"
                   >
                     Delete
                   </button>
@@ -101,53 +98,53 @@ const MedicineReminder = () => {
         </div>
 
         {isModalOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-xl shadow-xl p-6 w-full max-w-md">
-              <h2 className="text-2xl font-bold mb-4">Add New Medicine</h2>
+          <div className="modal-overlay">
+            <div className="modal-content">
+              <h2 className="modal-title">Add New Medicine</h2>
               
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-gray-700 mb-2">Medicine Name</label>
+              <div className="form-fields">
+                <div className="form-group">
+                  <label className="form-label">Medicine Name</label>
                   <input
                     type="text"
                     name="name"
                     value={newMedicine.name}
                     onChange={handleInputChange}
-                    className="w-full p-3 border border-gray-300 rounded-lg"
+                    className="form-input"
                     placeholder="e.g. Metformin"
                   />
                 </div>
                 
-                <div>
-                  <label className="block text-gray-700 mb-2">Dosage</label>
+                <div className="form-group">
+                  <label className="form-label">Dosage</label>
                   <input
                     type="text"
                     name="dosage"
                     value={newMedicine.dosage}
                     onChange={handleInputChange}
-                    className="w-full p-3 border border-gray-300 rounded-lg"
+                    className="form-input"
                     placeholder="e.g. 500mg"
                   />
                 </div>
                 
-                <div>
-                  <label className="block text-gray-700 mb-2">Time</label>
+                <div className="form-group">
+                  <label className="form-label">Time</label>
                   <input
                     type="time"
                     name="time"
                     value={newMedicine.time}
                     onChange={handleInputChange}
-                    className="w-full p-3 border border-gray-300 rounded-lg"
+                    className="form-input"
                   />
                 </div>
                 
-                <div>
-                  <label className="block text-zinc-950 mb-2">Frequency</label>
+                <div className="form-group">
+                  <label className="form-label">Frequency</label>
                   <select
                     name="frequency"
                     value={newMedicine.frequency}
                     onChange={handleInputChange}
-                    className="w-full p-3 border border-gray-300 text-zinc-950 rounded-lg"
+                    className="form-input"
                   >
                     <option>Daily</option>
                     <option>Weekly</option>
@@ -157,16 +154,16 @@ const MedicineReminder = () => {
                 </div>
               </div>
               
-              <div className="flex justify-end space-x-4 mt-6">
+              <div className="modal-actions">
                 <button
                   onClick={() => setIsModalOpen(false)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg text-zinc-950"
+                  className="cancel-btn"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={addMedicine}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg"
+                  className="confirm-btn"
                 >
                   Add Reminder
                 </button>
