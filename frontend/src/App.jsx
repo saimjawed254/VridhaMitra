@@ -36,7 +36,7 @@ const App = () => {
     </div>
     <div className="small-text">A single, intuitive app combining emergency response,<br /> daily health management using AI,
       and community support <br />designed specifically for seniors and their caregivers.</div>
-                <Link to='/sign-up'>
+                <Link to='/login'>
       <div className="svg-text">Get Started</div>
       </Link>
     <svg className="svg-get" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
