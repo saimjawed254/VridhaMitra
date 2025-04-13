@@ -62,7 +62,7 @@ function Login() {
                 receiver: email,
                 type,
             }, {
-                withCredentials: true,
+                withCredentials: false,
             })
             console.log(data)
             otpRef.current.value = "";
