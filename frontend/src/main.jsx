@@ -19,6 +19,7 @@ import Signup from './pages/signup.jsx'
 import PoseDetection from './pages/user-features/PoseDetection.jsx'
 import Travel from './pages/user-features/travel.jsx'
 import Fundraiser from './pages/user-features/fundraiser.jsx'
+import TravelRequests from './pages/user-features/TravelRequests.jsx'
 // import OTPVerify from './pages/otp-verify.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -36,6 +37,7 @@ createRoot(document.getElementById('root')).render(
           <Route path='/user-home/fundraiser' element={<Fundraiser />} />
                <Route path='/user-home/pose-detection' element={<PoseDetection/>}/>
           <Route path='/volunteer-home' element={<Volunte />} />
+          <Route path='/user-home/travel-requests' element={<TravelRequests />} />
           <Route path='/admin-home' element={<Admin />} />
         </Routes>
         <ToastContainer theme="dark" position='top-right' />
