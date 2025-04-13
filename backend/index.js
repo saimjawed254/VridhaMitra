@@ -6,6 +6,9 @@ import { Admin } from "./models/admin/admin.js";
 import { Volunteer } from "./models/volunteer/volunteer.js";
 import { sendOtp } from "./utils/sendOtp.js";
 import { User } from "./models/user/user.js";
+import { Health } from "./models/user/user-health.js";
+import { Fundraiser } from "./models/user/user-funds.js";
+import { Travel } from "./models/user/user-travel.js";
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
@@ -272,52 +275,207 @@ app.post('/update-location',async(req,res)=>{
 })
 
 app.post('/get-users', async(req,res)=>{
-  const email=req.body;
+  const {email}=req.body;
   try{
-    const user=await User.findOne(
-      {email:email},
+    const user=await Admin.findOne(
+      {email},
     )
+    console.log(user)
     res.json({
       usersArray : user.usersId,
       message: "Data Received Successfully",
     });
   } catch(e){
-    console.error("Error not found user:", error);
+    console.error("Error not found user:", e);
     res.status(500).send({ message: "User not found" });
   }
 })
 
-app.post('/add-user',async(req,res)=>{
-    const { name, age, gender, email, number, address } = req.body;
-    const image = req.files["image"][0];
-    const govid = req.files["govid"][0];
+
+app.post('/user-health',async(req,res)=>{
+
+  const { name, age, email, mobile,emergency_contact, medical_history, blood_group, address } = req.body;
+
+  const user=await Health.findOne({email})
+      if(user){
+          res.status(404).json({
+              message:"This data for this user is already registered!"
+          })
+      } else{
+          await Health.create({
+              name: name,
+              age: age,
+              mobileNumber: mobile,
+              email: email,
+              address: address,
+              emergencyContact: emergency_contact,
+              bloodGroup: blood_group,
+              address: address,
+              medicalHistory: medical_history,
+            });
+      }
+      res.json({
+        message: "Data Received Successfully",
+      });
+})
+
+app.post('/travel', upload.fields([{ name: "photo" }]),async(req,res)=>{
+
+  const photo = req.files["photo"][0];
+const { name, age, gender, mobileNumber, email , medicalConditions, source, destination, date, travelMode, specialRequirements, estimatedTravelCost, reimbursement, reimbursementAmount} = req.body;
+
+const user=await Travel.findOne({email})
+    if(user){
+        res.status(404).json({
+            message:"You already have one ongoing request!"
+        })
+    } else{
+        await Travel.create({
+            name: name,
+            age: age,
+            gender: gender,
+            mobileNumber: mobileNumber,
+            email: email,
+            photo: {
+              data: photo.buffer,
+              contentType: photo.mimetype,
+            },
+            medicalConditions: medicalConditions,
+            source: source,
+
+            destination:destination,
+            date:date,
+
+            travelMode:travelMode,
+            specialRequirements:specialRequirements,
+            estimatedTravelCost:estimatedTravelCost,
+            reimbursement:reimbursement,
+            reimbursementAmount:reimbursementAmount,
+          });
+    }
+    res.json({
+      message: "Data Received Successfully",
+    });
+})
+
+
+app.post('/fundraiser', upload.fields([{ name: "photo" }, { name: "qrcode" }]),async(req,res)=>{
+
+    const photo = req.files["photo"][0];
+    const qrcode = req.files["qrcode"][0];
+  const { name, age, gender, mobileNumber, need, story, specificRequirement, duedate, amount, urgency, upiid , email } = req.body;
+
+  const user=await Fundraiser.findOne({email})
+      if(user){
+          res.status(404).json({
+              message:"You already have one ongoing request!"
+          })
+      } else{
+          await Fundraiser.create({
+              name: name,
+              age: age,
+              gender: gender,
+              mobileNumber: mobileNumber,
+              email: email,
+              photo: {
+                data: photo.buffer,
+                contentType: photo.mimetype,
+              },
+              idPhoto: {
+                data: qrcode.buffer,
+                contentType: qrcode.mimetype,
+              },
+              need: need,
+              story: story,
+              specificRequirement: specificRequirement,
+              duedate: duedate,
+              amount: amount,
+              urgency: urgency,
+              upiid: upiid,
+            });
+      }
+      res.json({
+        message: "Data Received Successfully",
+      });
+})
+
+
+app.post('/user-health',async(req,res)=>{
+
+  const { name, age, email, mobile,emergency_contact, medical_history, blood_group, address } = req.body;
+
+  const user=await Health.findOne({email})
+      if(user){
+          res.status(404).json({
+              message:"This data for this user is already registered!"
+          })
+      } else{
+          await Health.create({
+              name: name,
+              age: age,
+              mobileNumber: mobile,
+              email: email,
+              address: address,
+              emergencyContact: emergency_contact,
+              bloodGroup: blood_group,
+              address: address,
+              medicalHistory: medical_history,
+            });
+      }
+      res.json({
+        message: "Data Received Successfully",
+      });
+})
+
+app.post('/add-user', upload.fields([{ name: "photo" }, { name: "idPhoto" }]),async(req,res)=>{
+    const { name, age, gender, email, mobileNumber, address, guardianMail, emergencyNumber, emergencyAddress } = req.body;
+    const photo = req.files["photo"][0];
+    const idPhoto= req.files["idPhoto"][0];
     const user=await User.findOne({email})
         if(user){
             res.status(404).json({
                 message:"This user is already registered!"
             })
+            return;
         } else{
             await User.create({
                 name: name,
                 age: age,
                 gender: gender,
-                mobileNumber: number,
+                mobileNumber: mobileNumber,
                 email: email,
                 address: address,
                 photo: {
-                  data: image.buffer,
-                  contentType: image.mimetype,
+                  data: photo.buffer,
+                  contentType: photo.mimetype,
                 },
                 idPhoto: {
-                  data: govid.buffer,
-                  contentType: govid.mimetype,
+                  data: idPhoto.buffer,
+                  contentType: idPhoto.mimetype,
                 },
+                guardianMail:guardianMail,
+                emergencyAddress:emergencyAddress,
+                emergencyNumber:emergencyNumber,
               });
         }
-        const admin=Admin.findOne({email})
-        let usersArray=admin.usersId;
-        usersArray.push(email)
-        await Admin.findOneAndUpdate({email},{
+        console.log(guardianMail)
+
+        const admin=await Admin.findOne({email: guardianMail})
+        const usersSet=new Set();
+        let usersid=admin.usersId;
+        if(usersid===undefined){
+          usersSet.add(email)
+        } else{
+          for(const user of usersid){
+            usersSet.add(user);
+          }
+          usersSet.add(email)
+        }
+        console.log(typeof(usersSet)+" wow "+usersSet)
+        const usersArray=Array.from(usersSet)
+        console.log(usersArray)
+
+        await Admin.findOneAndUpdate({guardianMail},{
           $set: { 
             usersId: usersArray
            } 

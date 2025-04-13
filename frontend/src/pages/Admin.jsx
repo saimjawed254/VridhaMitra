@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./admin.css";
 import Headerr from "../components/Headerr";
 import { useSelector } from "react-redux";
+import axios from "axios";
 
 function Admin() {
 
@@ -23,6 +24,7 @@ function Admin() {
       const usersData=await axios.post('http://127.0.0.1:3000/get-users',{
         email:emailValue.email
       })
+      console.log(usersData)
       usersArray=usersData.usersArray;
     }
     fetchUsers()
