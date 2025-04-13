@@ -88,8 +88,7 @@ function Login() {
     return (
         <>
             <div className="login-bg">
-                <video className='video-dashboard' src="/Darken.mp4" type="video/mp4" autoPlay muted loop>
-                </video>
+                
             </div>
 
             <div className="signup">
