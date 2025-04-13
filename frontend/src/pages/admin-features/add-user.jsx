@@ -3,8 +3,10 @@ import { useRef } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import './add-user.css'
+import { useNavigate } from "react-router-dom";
 
 function AddUserForm() {
+    const navigate=useNavigate()
     const nameRef = useRef();
     const ageRef = useRef();
     const genderRef = useRef();
@@ -41,6 +43,7 @@ function AddUserForm() {
             });
             toast.success("User added successfully!");
             console.log("Response:", response.data);
+            navigate('/admin-home')
         } catch (error) {
             console.error("Error:", error);
             toast.error("Failed to add user.");
