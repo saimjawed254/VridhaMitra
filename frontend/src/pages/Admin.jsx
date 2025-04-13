@@ -60,7 +60,7 @@ function Admin() {
                 ))}
               </tbody>
             </table>
-            <Link to='/add-user'>
+            <Link to='/admin-home/add-user'>
               <button className="view-all">Add User</button>
             </Link>
           </div>

@@ -19,7 +19,7 @@ export const sendOtp = async (mailData)=>{
                from:process.env.SMTP_MAIL,
                to:mailData.receiver,
                subject:mailData.subject,
-               text:"Your OTP for Vridha Mitr Sign Up is : "+mailData.otp,
+               text:"Your OTP for Vridha Mitra Sign Up is : "+mailData.otp,
            },
            );
        }
