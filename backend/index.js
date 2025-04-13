@@ -27,9 +27,8 @@ app.use(
 
 app.use(
   cors({
-    origin: "*",
+    origin: "https://vridha-mitra.onrender.com",
     methods: ["GET", "POST"],
-    credentials: true,
   })
 );
 
