@@ -2,6 +2,7 @@
 import { useRef } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
+import './add-user.css'
 
 function AddUserForm() {
     const nameRef = useRef();
@@ -65,19 +66,19 @@ function AddUserForm() {
             <ToastContainer />
             <h1>Add User</h1>
             <form onSubmit={handleFormSubmit}>
-                <input type="text" ref={nameRef} placeholder="Name" required />
-                <input type="text" ref={ageRef} placeholder="Age" required />
-                <input type="text" ref={genderRef} placeholder="Gender" required />
-                <input type="number" ref={mobileNumberRef} placeholder="Mobile Number" required />
-                <input type="email" ref={emailRef} placeholder="Email" required />
-                <input type="text" ref={addressRef} placeholder="Address" required />
-                <input type="file" ref={photoRef} accept="image/*" required />
-                <input type="file" ref={idPhotoRef} accept="image/*" required />
-                <input type="email" ref={guardianMailRef} placeholder="Guardian Email" required />
-                <input type="number" ref={emergencyNumberRef} placeholder="Emergency Number" required />
-                <input type="text" ref={emergencyAddressRef} placeholder="Emergency Address" required />
+                <input type="text" ref={nameRef} className="form-input" placeholder="Name" required />
+                <input type="text" ref={ageRef} className="form-input" placeholder="Age" required />
+                <input type="text" ref={genderRef} className="form-input" placeholder="Gender" required />
+                <input type="number" ref={mobileNumberRef} className="form-input" placeholder="Mobile Number" required />
+                <input type="email" ref={emailRef} className="form-input" placeholder="Email" required />
+                <input type="text" ref={addressRef} className="form-input" placeholder="Address" required />
+                <input type="file" ref={photoRef} className="form-input" accept="image/*" required />
+                <input type="file" ref={idPhotoRef} className="form-input" accept="image/*" required />
+                <input type="email" ref={guardianMailRef} className="form-input" placeholder="Guardian Email" required />
+                <input type="number" ref={emergencyNumberRef} className="form-input" placeholder="Emergency Number" required />
+                <input type="text" ref={emergencyAddressRef} className="form-input" placeholder="Emergency Address" required />
                 {/* <input type="text" ref={recentLocRef} placeholder="Recent Locations (comma-separated)" required /> */}
-                <button type="submit">Submit</button>
+                <button type="submit" className="form-submit">Submit</button>
             </form>
         </>
     );

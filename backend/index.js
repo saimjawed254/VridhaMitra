@@ -270,16 +270,15 @@ app.post('/update-location',async(req,res)=>{
     const name=user.name
     const mobilenumber=user.mobileNumber
     const guardianMail=user.guardianMail
-    
+    const trimmedMail=email.trim()
     const newsrc = "https://maps.google.com/maps?q="+lat+"+"+long+"&z=15"
     console.log(newsrc)
       await sendMail({
-          email,
+          email: trimmedMail,
           name,
           mobilenumber,
           newsrc,
           guardianMail,
-          subject:" ALERT! DANGER TO YOUR FAMILY ",
       })
     res.json({
       message: "Data Received Successfully",

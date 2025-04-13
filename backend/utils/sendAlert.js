@@ -18,10 +18,9 @@ export const sendMail = async (mailData)=>{
             transporter.sendMail({
                from:process.env.SMTP_MAIL,
                to:mailData.guardianMail,
-               subject:mailData.subject,
+               subject:" ALERT! DANGER TO YOUR FAMILY ",
                text:"Name : "+mailData.name+"\n Number : "+mailData.mobilenumber+"\n Email : "+mailData.email+"\n Message : Reach this Location immediately: \n"+mailData.newsrc,
            },
-
            );
        }
        catch(error){
