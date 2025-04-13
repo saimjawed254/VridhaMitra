@@ -1,8 +1,8 @@
 import React from 'react';
-import baddha_konasana from '../assets/Baddha_konasana.jpg';
-import malasana from '../assets/Malasana.jpeg';
-import vajrasana from '../assets/Vajrasana.jpg';
-import balasana from '../assets/Balasana.jpg';
+import baddha_konasana from '../../assets/Baddha_konasana.jpg';
+import malasana from '../../assets/Malasana.jpeg';
+import vajrasana from '../../assets/Vajrasana.jpg';
+import balasana from '../../assets/Balasana.jpg';
 
 const PoseSelector = ({ selectedPose, onChange }) => {
   const poses = [
