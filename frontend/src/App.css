@@ -84,6 +84,13 @@
   left:55vw
 }
 
+.server{
+  position: absolute;
+  top:92vh;
+  left:5vw;
+  font-size:1vw;
+  color: #000;
+}
 .svg-text {
   z-index: 10;
   position: relative;

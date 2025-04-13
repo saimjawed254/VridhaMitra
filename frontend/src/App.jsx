@@ -73,8 +73,7 @@ const App = () => {
       </svg>
     </div>
     </Link>
-
-
+    <div className="server">In case the server is down. Refresh multiple times to reset the bandwidth of the server</div>
   </>
 
   );

@@ -15,6 +15,7 @@ function User() {
   //     navigate("/login")
   //   }
   // }, []);
+
   console.log(emailValue)
 
   const getLoc = () => {
@@ -27,13 +28,9 @@ function User() {
 
   function success(position) {
 
-    setLoading(true);
-
     const lat = position.coords.latitude.toString();
     const long = position.coords.longitude.toString();
 
-    setLat(lat);
-    setLong(long);
     console.log(lat + " " + long)
 
     let data;
@@ -64,7 +61,7 @@ function User() {
 
       <main className="main-content">
         <div className="hero-section">
-          <h2>BluePulse: A new age of healthcare is here</h2>
+          <h2>Vridha Mitra: A new age of healthcare is here</h2>
           <p className="subtitle">Explore with AI</p>
         </div>
 
