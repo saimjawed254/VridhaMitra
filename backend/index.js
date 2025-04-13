@@ -27,7 +27,7 @@ app.use(
 
 app.use(
   cors({
-    origin: "https://vridhamitra.vercel.app",
+    origin: "*",
     methods: ["GET", "POST"],
   })
 );
