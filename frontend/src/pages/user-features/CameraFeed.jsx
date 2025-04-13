@@ -6,6 +6,7 @@ const CameraFeed = ({ isActive, onCapture }) => {
   const [capturedImage, setCapturedImage] = useState(null);
   const [uploadStatus, setUploadStatus] = useState('');
   const [poseName, setPoseName] = useState('');
+  const [annotatedImage, setAnnotatedImage] = useState(null);
 
   useEffect(() => {
     if (isActive) {
@@ -83,6 +84,9 @@ const CameraFeed = ({ isActive, onCapture }) => {
         setUploadStatus('Upload successful!');
         setPoseName(result.Pose_Name || 'Pose not detected');
         console.log("Upload response:", result);
+        if (result.annotated_image) {
+          setAnnotatedImage(`data:image/png;base64,${result.annotated_image}`);
+        }
       } else {
         setUploadStatus(`Upload failed: ${result.detail || 'Unknown error'}`);
       }
@@ -119,22 +123,21 @@ const CameraFeed = ({ isActive, onCapture }) => {
         <div className="captured-image">
           <h3>Captured Image:</h3>
           <img 
-            src={capturedImage.dataUrl} 
+            src={annotatedImage} 
             alt={`Captured at ${capturedImage.timestamp}`} 
-            style={{ maxWidth: '100%', borderRadius: '8px', marginTop: '10px' }}
           />
           <p>{capturedImage.timestamp}</p>
         </div>
       )}
 
       {uploadStatus && (
-        <div className="upload-status" style={{ marginTop: '15px' }}>
+        <div className="upload-status" style={{ marginTop: '15px', color: 'black'}}>
           <strong>Status:</strong> {uploadStatus}
         </div>
       )}
 
       {poseName && (
-        <div className="pose-result" style={{ marginTop: '10px' }}>
+        <div className="pose-result" style={{ marginTop: '10px', color: 'black'}}>
           <strong>Detected Pose:</strong> <code>{poseName}</code>
         </div>
       )}
