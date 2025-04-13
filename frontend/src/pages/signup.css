@@ -18,6 +18,13 @@ body {
   margin-bottom: 1rem;
 }
 
+h2 {
+  text-align: center;
+  color: #333;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
 /* Form Container */
 .signup-container {
   max-width: 600px;

@@ -60,6 +60,8 @@ function Signup() {
     return (
         <>
         <h1 className="signup-heading">Sign Up</h1>
+        <h2>Only admin can sign up and then add user. A user can only Log In <br />
+        For testing purposes of user features,sign up as 'admin' and then add an user and then relogin as 'user' </h2>
         <div className="signup-container">
             <form onSubmit={handleForm} className="signup-form">
                 <input type="text" ref={typeRef} className="form-input" placeholder="Please enter your type!" required />
