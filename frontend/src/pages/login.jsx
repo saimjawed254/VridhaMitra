@@ -106,6 +106,7 @@ function Login() {
             <div className="otp-verify">
                 <div className="otp-heading">OTP Sent!</div>
                 <div className="otp-text"> Enter the OTP sent to your email.</div>
+                <h2>Check the spam folder as well!</h2>
                 <form action="" className="otp-form" onSubmit={handleotp}>
                     <input type="number" ref={otpRef} className="input-otp" maxLength={6} required />
                     <button type='submit' className="button-otp">
