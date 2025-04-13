@@ -37,8 +37,6 @@ function User() {
 
     setLat(lat);
     setLong(long);
-    const newsrc = "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d104128.91649944017!2d" + latitude + "!3d" + longitude + "!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1743491925268!5m2!1sen!2sin"
-    document.getElementsByClassName("gmap").src = newsrc
     console.log(lat + " " + long)
 
     console.log(newsrc)
@@ -47,8 +45,8 @@ function User() {
       const fetchLoc = async () => {
          data = await axios.post("https://vridhamitra.onrender.com/update-location/", {
           email: emailValue.email,
-          lat: latitude,
-          long: longitude,
+          lat,
+          long,
         })
       console.log(data)
       toast.success(data.data.message)

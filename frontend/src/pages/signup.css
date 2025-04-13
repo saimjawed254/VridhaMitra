@@ -1,57 +1,89 @@
+/* signup.css */
+
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f6f8;
+}
+
+/* Header */
+.signup-heading {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Form Container */
+.signup-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input, .file-input, .form-submit {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Form Input Styling */
+.form-input:focus, .file-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* File Inputs */
+.file-label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.file-input {
+  padding: 0.4rem;
+  border-radius: 4px;
+}
+
+/* Submit Button */
+.form-submit {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-submit:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (min-width: 1024px) {
+  .signup-container {
+      padding: 3rem;
   }
-  
-  .signup-title {
-    text-align: center;
-    color: #333;
-    margin-top: 20px;
-    font-size: 2rem;
+
+  .form-input, .file-input, .form-submit {
+      font-size: 1.1rem;
   }
-  
-  .image-form {
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  .signup-heading {
+      font-size: 2.5rem;
   }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-input,
-  .form-file-input {
-    margin-bottom: 15px;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .form-input:focus,
-  .form-file-input:focus {
-    outline: none;
-    border-color: #007bff;
-  }
-  
-  .form-submit-btn {
-    padding: 10px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .form-submit-btn:hover {
-    background-color: #0056b3;
-  }
+}

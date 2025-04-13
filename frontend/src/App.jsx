@@ -36,22 +36,45 @@ const App = () => {
     </div>
     <div className="small-text">A single, intuitive app combining emergency response,<br /> daily health management using AI,
       and community support <br />designed specifically for seniors and their caregivers.</div>
-                <Link to='/login'>
-      <div className="svg-text">Get Started</div>
-      </Link>
-    <svg className="svg-get" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
-      <circle cx="84.5" cy="84.5" r="82" fill="url(#paint0_linear_4_29)" stroke="url(#paint1_linear_4_29)" stroke-width="5" />
-      <defs>
-        <linearGradient id="paint0_linear_4_29" x1="164" y1="-6.5" x2="5.00001" y2="164" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#39EBF5" stop-opacity="0.5" />
-          <stop offset="1" stop-color="#20666A" stop-opacity="0.9" />
-        </linearGradient>
-        <linearGradient id="paint1_linear_4_29" x1="164" y1="5" x2="5" y2="164" gradientUnits="userSpaceOnUse">
-          <stop stop-color="white" />
-          <stop offset="1" stop-color="#39ECF5" />
-        </linearGradient>
-      </defs>
-    </svg>
+    <Link to='/login'>
+    <div className="svgs1">
+      <div className="svg-text">Log In</div>
+      <svg className="svg-get" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
+        <circle cx="84.5" cy="84.5" r="82" fill="url(#paint0_linear_4_29)" stroke="url(#paint1_linear_4_29)" stroke-width="5" />
+        <defs>
+          <linearGradient id="paint0_linear_4_29" x1="164" y1="-6.5" x2="5.00001" y2="164" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#39EBF5" stop-opacity="0.5" />
+            <stop offset="1" stop-color="#20666A" stop-opacity="0.9" />
+          </linearGradient>
+          <linearGradient id="paint1_linear_4_29" x1="164" y1="5" x2="5" y2="164" gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" />
+            <stop offset="1" stop-color="#39ECF5" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    </Link>
+
+    <Link to='/sign-up'>
+    <div className="svgs2">
+      <div className="svg-text">Sign up</div>
+      <svg className="svg-get" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
+        <circle cx="84.5" cy="84.5" r="82" fill="url(#paint0_linear_4_29)" stroke="url(#paint1_linear_4_29)" stroke-width="5" />
+        <defs>
+          <linearGradient id="paint0_linear_4_29" x1="164" y1="-6.5" x2="5.00001" y2="164" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#39EBF5" stop-opacity="0.5" />
+            <stop offset="1" stop-color="#20666A" stop-opacity="0.9" />
+          </linearGradient>
+          <linearGradient id="paint1_linear_4_29" x1="164" y1="5" x2="5" y2="164" gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" />
+            <stop offset="1" stop-color="#39ECF5" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    </Link>
+
+
   </>
 
   );

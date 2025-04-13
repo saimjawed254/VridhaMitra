@@ -59,22 +59,23 @@ function Signup() {
 
     return (
         <>
-            <h1>Sign up</h1>
-            <div className="image-form">
-                {/* enctype="multipart/form-data" */}
-                <form onSubmit={handleForm} action="">
-                    <input type="text" ref={typeRef} placeholder='Please enter your type!' required />
-                    <input type="text" ref={nameRef} placeholder='Please enter your good name!' required />
-                    <input type="number" ref={ageRef} placeholder='Please enter your age!' required />
-                    <input type="text" ref={genderRef} placeholder='Please enter your Gender!' required />
-                    <input type="text" ref={emailRef} placeholder='Please enter your Email!' required />
-                    <input type="text" ref={numberRef} placeholder='Please enter your Number!' required />
-                    <input type="text" ref={addressRef} placeholder='Please enter your Address!' required />
-                    <input type="file" name="image" ref={imageInputRef} />
-                    <input type="file" name="govid" ref={govidInputRef} />
-                    <input type="submit" value="Submit" />
-                </form>
-            </div>
+        <h1 className="signup-heading">Sign Up</h1>
+        <div className="signup-container">
+            <form onSubmit={handleForm} className="signup-form">
+                <input type="text" ref={typeRef} className="form-input" placeholder="Please enter your type!" required />
+                <input type="text" ref={nameRef} className="form-input" placeholder="Please enter your good name!" required />
+                <input type="number" ref={ageRef} className="form-input" placeholder="Please enter your age!" required />
+                <input type="text" ref={genderRef} className="form-input" placeholder="Please enter your Gender!" required />
+                <input type="text" ref={emailRef} className="form-input" placeholder="Please enter your Email!" required />
+                <input type="text" ref={numberRef} className="form-input" placeholder="Please enter your Number!" required />
+                <input type="text" ref={addressRef} className="form-input" placeholder="Please enter your Address!" required />
+                <label className="file-label">Upload Image:</label>
+                <input type="file" name="image" ref={imageInputRef} className="file-input" />
+                <label className="file-label">Upload Government ID:</label>
+                <input type="file" name="govid" ref={govidInputRef} className="file-input" />
+                <input type="submit" value="Submit" className="form-submit" />
+            </form>
+        </div>
         </>
     )
 }

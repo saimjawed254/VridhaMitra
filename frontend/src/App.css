@@ -1,3 +1,4 @@
+
 .home-logo {
   position: absolute;
   top: 5vh;
@@ -58,18 +59,6 @@
   line-height: normal;
 }
 
-.svg-text {
-  z-index: 10;
-  position: absolute;
-  top: 81.5vh;
-  left: 46.5vw;
-  color: #fff;
-  font-family: Poppins;
-  font-size: 1vw;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
 
 .small-text {
   position: absolute;
@@ -83,13 +72,40 @@
   line-height: normal;
 }
 
-.svg-get {
+.svgs1{
   position: absolute;
-  top: 75vh;
-  left: 45vw;
+  top:70vh;
+  left:35vw
 }
 
+.svgs2{
+  position: absolute;
+  top:70vh;
+  left:55vw
+}
+
+.svg-get {
+  /* position: absolute;
+  top: 75vh;
+  left: 45vw; */
+}
+
+.svg-text {
+  z-index: 10;
+  position: relative;
+  top:10vh;
+  left: 2.5vw;
+  align-items: center;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 1vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
 .app {
+  width: 100vw;
+  height: 100vh;
   font-family: "Arial", sans-serif;
   max-width: 800px;
   margin: 0 auto;
